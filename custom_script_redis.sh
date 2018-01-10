@@ -19,13 +19,15 @@ apt-cache search docker-ce
 # install docker
 sudo apt-get install -y docker-ce
 
-#check its running
-sudo systemctl status docker
-
 # pull docker image for redis
 docker pull avarade/cb-redis
 
 # run docker image and start redis server
 docker run -p 6379:6379 avarade/cb-redis
+
+# install redis-tools
+sudo apt install redis-tools
+
+
 
 
