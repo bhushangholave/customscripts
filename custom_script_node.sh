@@ -13,4 +13,4 @@ sudo apt-get install -y docker-ce
 docker pull avarade/cb-node
 
 # run docker image and start redis server
-docker run -p 8080:8080 --restart always -e CB_ENV_NAME=backend.cloudhedgeme.com avarade/cb-node
+docker run -p 8080:8080 --restart always -e CB_ENV_NAME=10.0.0.5 avarade/cb-node
