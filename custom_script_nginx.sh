@@ -11,4 +11,4 @@ apt-cache search docker-ce
 sudo apt-get install -y docker-ce
 
 # Run Docker Container on VM
-docker run -p 80:80  -e CB_ENV_PREFIX= avarade/cb-nginx
+docker run -p 80:80  -e CB_ENV_PREFIX=10.0.0.10 avarade/cb-nginx
