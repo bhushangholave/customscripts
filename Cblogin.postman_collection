@@ -1,0 +1,294 @@
+{
+	"id": "4d11cdb7-149c-f75e-4e29-8df91c5638b0",
+	"name": "Cloudbreeze",
+	"description": "",
+	"order": [
+		"53ebb6ba-6a08-2ebc-d4cf-e32897ca6e96",
+		"f13af55f-fddd-e7a0-309f-30bc5f06c143",
+		"174cd28d-ac77-e0f4-f74a-978e68b50fd5",
+		"4d9ba4e6-30bb-c08d-59de-0e9803a26eae",
+		"09225cdf-8da4-61ae-69a0-a7838b2edfbd",
+		"5e319718-f250-1737-1963-a67812614a03",
+		"b0ede236-fdb6-7fe2-a735-4c14376526af",
+		"c8d711b1-5444-f48f-6b5b-801032d58bdd",
+		"60e21454-c189-10d6-0b3a-c4b17410df9b"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1492847263980,
+	"owner": 0,
+	"public": false,
+	"events": [],
+	"variables": [],
+	"auth": null,
+	"requests": [
+		{
+			"id": "09225cdf-8da4-61ae-69a0-a7838b2edfbd",
+			"headers": "Content-Type: application/json\ntoken: {{token}}\n",
+			"url": "{{api-endpoint}}/apps/58b7bde35ab4cf000a288bb7/getalldeployments",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"time": 1493283220175,
+			"name": "deployments",
+			"description": "",
+			"collectionId": "4d11cdb7-149c-f75e-4e29-8df91c5638b0",
+			"responses": [],
+			"rawModeData": "{\n\t\"email\": \"skarmarkar@whitehedge.com\",\n\t\"password\": \"samk12345\"\n}",
+			"auth": null,
+			"collection_id": "4d11cdb7-149c-f75e-4e29-8df91c5638b0",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "174cd28d-ac77-e0f4-f74a-978e68b50fd5",
+			"headers": "Content-Type: application/json\ntoken: {{token}}\n",
+			"url": "{{api-endpoint}}/apps",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"time": 1493178271152,
+			"name": "apps",
+			"description": "",
+			"collectionId": "4d11cdb7-149c-f75e-4e29-8df91c5638b0",
+			"responses": [],
+			"rawModeData": "{\n\t\"email\": \"skarmarkar@whitehedge.com\",\n\t\"password\": \"samk12345\"\n}",
+			"auth": null,
+			"collection_id": "4d11cdb7-149c-f75e-4e29-8df91c5638b0",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "4d9ba4e6-30bb-c08d-59de-0e9803a26eae",
+			"headers": "Content-Type: application/json\ntoken: {{token}}\n",
+			"url": "{{api-endpoint}}/apps/58aa8e0f316253000a7e3486/envs",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"time": 1493354203569,
+			"name": "envs",
+			"description": "",
+			"collectionId": "4d11cdb7-149c-f75e-4e29-8df91c5638b0",
+			"responses": [],
+			"rawModeData": "{\n\t\"email\": \"skarmarkar@whitehedge.com\",\n\t\"password\": \"samk12345\"\n}",
+			"auth": null,
+			"collection_id": "4d11cdb7-149c-f75e-4e29-8df91c5638b0",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "53ebb6ba-6a08-2ebc-d4cf-e32897ca6e96",
+			"headers": "Content-Type: application/json\nAccept: gzip\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept",
+					"value": "gzip",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{api-endpoint}}/auth/login/",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "47797021-61a0-4922-a7b5-f0f0cf16785d",
+						"type": "text/javascript",
+						"exec": [
+							"postman.setGlobalVariable(\"api-endpoint\", \"http://localhost:8000/v0\");"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "dea02a2a-58c0-46a9-81a6-e2cc6bce8a1a",
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"token\", jsonData.token);",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"auth": null,
+			"time": 1514528982639,
+			"name": "Login",
+			"description": "",
+			"collectionId": "4d11cdb7-149c-f75e-4e29-8df91c5638b0",
+			"responses": [],
+			"preRequestScript": "postman.setGlobalVariable(\"api-endpoint\", \"http://localhost:8000/v0\");",
+			"tests": "var jsonData = JSON.parse(responseBody);\npostman.setGlobalVariable(\"token\", jsonData.token);\n\n",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\n\t\"email\": \"bgholave@whitehedge.com\",\n\t\"password\": \"password12345\"\n}"
+		},
+		{
+			"id": "5e319718-f250-1737-1963-a67812614a03",
+			"headers": "Content-Type: application/json\ntoken: {{token}}\n",
+			"url": "{{api-endpoint}}/apps/deploy/",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"time": 1493354121266,
+			"name": "Deployversion",
+			"description": "",
+			"collectionId": "4d11cdb7-149c-f75e-4e29-8df91c5638b0",
+			"responses": [],
+			"isFromCollection": true,
+			"rawModeData": "{\n  \"deploy\":\n  [\n      {\n          \"app\": \"58aa8e0f316253000a7e3486\",\n          \"appVersionId\": \"58aa8e0f316253000a7e3487\",\n          \"envs\": [\n               {\n                   \"name\": \"test6\",\n                   \"clusters\": [\"5901fc08f78dd1000a891582\"]\n               }\n          ],\n          \"services\":{\"server\":[]}\n      }\n  ]\n}",
+			"auth": null,
+			"collection_id": "4d11cdb7-149c-f75e-4e29-8df91c5638b0",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "60e21454-c189-10d6-0b3a-c4b17410df9b",
+			"headers": "Content-Type: application/json\ntoken: {{token}}\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "token",
+					"value": "{{token}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{api-endpoint}}/env/reserve",
+			"queryParams": [],
+			"events": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "3111343c-7938-475d-908c-c4b5cc082d53",
+						"type": "text/javascript",
+						"exec": [
+							"postman.setGlobalVariable(\"api-endpoint\", \"http://localhost:8000/v0\");"
+						]
+					}
+				}
+			],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"auth": null,
+			"time": 1514529849086,
+			"name": "reserve env",
+			"description": "",
+			"collectionId": "4d11cdb7-149c-f75e-4e29-8df91c5638b0",
+			"responses": [],
+			"preRequestScript": "postman.setGlobalVariable(\"api-endpoint\", \"http://localhost:8000/v0\");",
+			"tests": null,
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\n\"displayName\": \"testazure-env\",\n\"app\" : \"5a44c28870368c348c783f27\",\n\"vaultId\" : \"5a44c94770368c348c783f2d\",\n\"cloudProvider\" : \"azure\",\n\"azregion\": \"southcentralus\",\n\"azresourcegr\": \"terraformrg\",\n\"chSubnet\": [\"az-subnet-serv1\", \"az-subnet-serv2\"],\n\"chsshkey\": \"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCmMqe8D1tQpbdkvFRHWlc4lFmWIWdqiccksIyp81ZPFZ7n5giCdHXE/NADWZXmx5IYUBRX9GWY5HxK2w74Bn8h/7V4XYOjj0r9Wllyzqp7WRQIb+4EneEmMeUSNMog7G8NwcxezbBFBzd5BdBrltpSAsxQb2sWOgcNwcYUOPPGGimYeNUF1CXSK18DqFsRsDOV9GYqhoR86lqokJMWr0xyMHC/rJBj7wUzllqEVxW5HZRFkVH7hULReKr3I9al7JKCt3+vtxuu1/hw4W8BIHSRQP+AQMKGeXVtWUOmHeH0sVRblTHxvy4KniZs/sxBTTjl/bIKE3mugm6LHhsNSCi5\"\n}"
+		},
+		{
+			"id": "b0ede236-fdb6-7fe2-a735-4c14376526af",
+			"headers": "Content-Type: application/json\ntoken: {{token}}\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "token",
+					"value": "{{token}}",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{api-endpoint}}/app/deploy/",
+			"queryParams": [],
+			"events": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"auth": null,
+			"time": 1514531597567,
+			"name": "Deploy",
+			"description": "",
+			"collectionId": "4d11cdb7-149c-f75e-4e29-8df91c5638b0",
+			"responses": [],
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\n  \"deploy\":\n  [\n      {\n          \"appId\": \"5a44c28870368c348c783f27\",\n          \"appVersionId\": \"5a44c28870368c348c783f28\",\n          \"envId\": \"5a45e484767d674678381086\"\n      }\n  ]\n}"
+		},
+		{
+			"id": "c8d711b1-5444-f48f-6b5b-801032d58bdd",
+			"headers": "Content-Type: application/json\ntoken: {{token}}\n",
+			"url": "{{api-endpoint}}/envs/5900374e061b581fbd74ff4e/clean",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"time": 1493283728988,
+			"name": "clean",
+			"description": "",
+			"collectionId": "4d11cdb7-149c-f75e-4e29-8df91c5638b0",
+			"responses": [],
+			"rawModeData": "{}",
+			"auth": null,
+			"collection_id": "4d11cdb7-149c-f75e-4e29-8df91c5638b0",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "f13af55f-fddd-e7a0-309f-30bc5f06c143",
+			"headers": "Content-Type: application/json\ntoken: {{token}}\n",
+			"url": "{{api-endpoint}}/clusters",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"time": 1493178252216,
+			"name": "clusters",
+			"description": "",
+			"collectionId": "4d11cdb7-149c-f75e-4e29-8df91c5638b0",
+			"responses": [],
+			"rawModeData": "{\n\t\"email\": \"skarmarkar@whitehedge.com\",\n\t\"password\": \"samk12345\"\n}",
+			"auth": null,
+			"collection_id": "4d11cdb7-149c-f75e-4e29-8df91c5638b0",
+			"currentHelper": null,
+			"helperAttributes": null
+		}
+	]
+}
