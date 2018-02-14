@@ -23,7 +23,7 @@ if [ $package = "apt-get" ]; then
   apt-get install dnsmasq -y 
   echo $DNSENTRIES > /etc/dnsmasq.d/10-consul
   service dnsmasq restart
-  service dnsmasq status
+  #service dnsmasq status
   #runlevel set
   echo "installing dnsmasq on ubuntu completed"
 fi
@@ -35,6 +35,6 @@ if [ $package = "yum" ]; then
   echo $DNSENTRIES > /etc/dnsmasq.d/10-consul
   systemctl enable dnsmasq.service
   systemctl restart dnsmasq.service
-  systemctl status dnsmasq.service
+  #systemctl status dnsmasq.service
   echo "installing dnsmasq on centos completed"
 fi
