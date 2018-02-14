@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # export $DNSENTRIES="server=/consul/127.0.0.1#8600"
-
+echo "The DNSENTRIES environment variable is $DNSENTRIES"
 #Support other distributions 
 
 YUM_CMD=$(which yum 2>/dev/null ) 
